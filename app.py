@@ -1,3 +1,10 @@
+from flask import Flask
 
-print("Hello from GitHub Jenkins Pipeline")
-print("Successfully updated app.py")
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello! This application was deployed using Jenkins."
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
